@@ -10,9 +10,62 @@
 <title>Notes: Where the notes live</title>
 </head>
 <body>
-<h1>This is a thing</h1>
+<!-- start container wrapping the entire page -->
+<div class="container">
+  <!-- create row that will hold the top bar -->
+  <div class="row">
+    <!-- start nav col-12 -->
+    <div class="col-12 col-md-12">
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link active" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-primary" href="#" role="button">Create New Note</a>
+        </li>
+      </ul>
+    </div>
+    <!-- end nav col-12 -->
+  </div>
+  <!-- end row that will hold the top bar -->
+  <!-- start second row containing left side col and right main col -->
+  <div class="row">
+    <!-- start left aside -->
+    <aside class="col-4 col-md-4">
+      <ul class="list-group">
+          <li class="list-group-item active">Cras justo odio</li>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <li class="list-group-item">Morbi leo risus</li>
+          <li class="list-group-item">Porta ac consectetur ac</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+    </aside>
+    <!-- end left aside -->
 
-<a href="/">Home</a>
+    <!-- start right main area -->
+    <main class="col-7 col-md-7">
+      <!-- start form area -->
+      <form>
+        <!-- start #titleInput area -->
+        <div class="form-group">
+          <label for="titleInput">Title</label>
+          <input class="form-control" type="text" placeholder="Title" id="titleInput">
+        </div>
+        <!-- end title input area -->
+        <!-- start #mainInput area -->
+        <div class="form-group">
+          <label for="mainInput">Notes</label>
+          <textarea class="form-control" id="mainInput" rows="10"></textarea>
+        </div>
+        <!-- end #mainInput area -->
+      </form>
+      <!-- end form area -->
+    </main>
+    <!-- end right main area -->
+  </div>
+  <!-- end second row containing left side col and right main col -->
+</div>
+<!-- end container wrapping the page -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
