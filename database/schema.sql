@@ -1,0 +1,13 @@
+DROP DATABASE IF EXISTS notes_db;
+CREATE DATABASE notes_db;
+USE DATABASE notes_db;
+
+-- create columns/rows
+CREATE TABLE tables;
+(
+  id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR (255) NOT NULL,
+  date DATETIME DEFAULT now() ON UPDATE CURRENT_TIMESTAMP,
+  note-body TEXT,
+  PRIMARY KEY (id)
+);
