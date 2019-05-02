@@ -21,7 +21,7 @@
           <a class="nav-link active" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="btn btn-primary" href="#" role="button">Create New Note</a>
+          <a id="newNoteBtn" class="btn btn-primary" href="#" role="button">Create New Note</a>
         </li>
       </ul>
     </div>
@@ -54,7 +54,11 @@
           <textarea class="form-control" id="mainInput" rows="10"></textarea>
         </div>
         <!-- end #mainInput area -->
-        <input type="submit" class="btn" value="Save">
+        <!-- start button area -->
+        <div id="btnArea" class="col-12 col-md-12">
+          <button id="saveBtn" type="button" class="btn">Save</button>
+        </div>
+        <!-- end button area -->
       </form>
       <!-- end form area -->
     </main>

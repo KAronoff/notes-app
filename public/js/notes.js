@@ -19,6 +19,9 @@ let $mainInput = $("#main-input");
 
 var $noteListItems = [];
 var notesArr = [];
+
+  $("#titleInput").val("");
+  $("#mainInput").val("");
 // get the information from the database
 
 var getNotes = function(){
@@ -50,7 +53,6 @@ getNotes();
 
 $(document).on("click", ".notesItem", function(){
   
-  var ulChild = this.nextElementSibling;
   var dataId = parseInt($(this).attr("id-data"));
   console.log(dataId);
 
@@ -59,7 +61,77 @@ $(document).on("click", ".notesItem", function(){
     $("#titleInput").val(noteData[0].name);
     $("#mainInput").val(noteData[0].noteBody);
   })
+  $("#btnArea").empty();
+
+  let $button = $("<button>").attr("id", "updateBtn").attr("type", "button").addClass("btn").text("Update");
+  let $deleteBtn = $("<button>").attr("id", "deleteBtn").attr("type", "button").addClass("btn").text("Delete");
+  $("#btnArea").append($button, $deleteBtn);
+
+  $(document).on("click", "#updateBtn", function(){
+    let updateNote = {
+      name: $("#titleInput").val().trim(),
+      noteBody: $("#mainInput").val().trim()
+    }
+  
+    $.ajax({method: "PUT", url: "/api/notes/"+dataId, data: updateNote})
+    .then(function(updatedNote){
+      console.log(updateNote);
+    })
+  });
+
+  $(document).on("click", "#deleteBtn", function(){
+    
+    $.ajax({method: "DELETE", url: "/api/notes/"+dataId})
+    .then(function(updatedNote){
+      console.log("Note Deleted");
+    })
+  });
+
     
   }
 
 );
+
+$(document).on("click", "#saveBtn", function(){
+  const newNote = {
+    name: $("#titleInput").val().trim(),
+    noteBody: $("#mainInput").val().trim()
+  }
+  if (!newNote.name || !newNote.noteBody){
+    alert("You cannot save an empty note")
+  }
+  $.ajax({method: "POST", url: "/api/notes", data: newNote})
+  .then(function(data){
+
+    let note = data;
+
+      notesArr.push(note);
+
+      console.log(note);
+      let $li = $("<li>").addClass("list-group-item notesItem").attr("id-data", note.id);
+      let $titleP = $("<p>").text(note.name);
+      let $dateP = $("<p>").text(note.date);
+
+      $li.append($titleP, $dateP);
+
+      $noteListItems.push($li);
+    
+      $noteList.append($noteListItems);
+
+    $("#titleInput").val("");
+    $("#mainInput").val("");
+    
+  });
+})
+
+
+$("#newNoteBtn").on("click", function(){
+  $("#titleInput").val("");
+  $("#mainInput").val("");
+
+  let $button = $("<button>").attr("id", "saveBtn").attr("type", "button").addClass("btn").text("Save")
+  $("#btnArea").empty();
+
+  $("#btnArea").append($button);
+
+})
