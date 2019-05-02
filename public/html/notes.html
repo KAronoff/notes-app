@@ -32,32 +32,29 @@
   <div class="row">
     <!-- start left aside -->
     <aside class="col-4 col-md-4">
-      <ul class="list-group">
-          <li class="list-group-item active">Cras justo odio</li>
-          <li class="list-group-item">Dapibus ac facilisis in</li>
-          <li class="list-group-item">Morbi leo risus</li>
-          <li class="list-group-item">Porta ac consectetur ac</li>
-          <li class="list-group-item">Vestibulum at eros</li>
+      <ul id="note-list" class="list-group">
+          
         </ul>
     </aside>
     <!-- end left aside -->
 
     <!-- start right main area -->
     <main class="col-7 col-md-7">
-      <!-- start form area -->
-      <form>
-        <!-- start #titleInput area -->
+      <!-- start #note-form area -->
+      <form id="note-form">
+        <!-- start #title-input area -->
         <div class="form-group">
-          <label for="titleInput">Title</label>
+          <label for="title-input">Title</label>
           <input class="form-control" type="text" placeholder="Title" id="titleInput">
         </div>
         <!-- end title input area -->
-        <!-- start #mainInput area -->
+        <!-- start #main-input area -->
         <div class="form-group">
-          <label for="mainInput">Notes</label>
+          <label for="main-input">Notes</label>
           <textarea class="form-control" id="mainInput" rows="10"></textarea>
         </div>
         <!-- end #mainInput area -->
+        <input type="submit" class="btn" value="Save">
       </form>
       <!-- end form area -->
     </main>
@@ -69,5 +66,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="../js/notes.js"></script>
 </body>
 </html>
