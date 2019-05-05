@@ -6,7 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Sofia" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
 <title>Notes: Where the notes live</title>
 </head>
 <body>
@@ -15,13 +16,13 @@
   <!-- create row that will hold the top bar -->
   <div class="row">
     <!-- start nav col-12 -->
-    <div class="col-12 col-md-12">
-      <ul class="nav justify-content-center">
+    <div id="navBar" class="col-12 col-md-12">
+      <ul class="nav justify-content-end">
         <li class="nav-item">
-          <a class="nav-link active" href="/">Home</a>
+          <a id="homeLink" class="nav-link" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a id="newNoteBtn" class="btn btn-primary" href="#" role="button">Create New Note</a>
+          <a id="newNoteBtn" class="btn" href="#" role="button">Create New Note</a>
         </li>
       </ul>
     </div>
@@ -29,7 +30,7 @@
   </div>
   <!-- end row that will hold the top bar -->
   <!-- start second row containing left side col and right main col -->
-  <div class="row">
+  <div class="row my-4">
     <!-- start left aside -->
     <aside class="col-4 col-md-4">
       <ul id="note-list" class="list-group">

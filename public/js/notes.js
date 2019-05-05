@@ -83,8 +83,23 @@ $(document).on("click", ".notesItem", function(){
     
     $.ajax({method: "DELETE", url: "/api/notes/"+dataId})
     .then(function(updatedNote){
-      console.log("Note Deleted");
+      $("#titleInput").val("");
+      $("#mainInput").val("");
+
+      let $button = $("<button>").attr("id", "saveBtn").attr("type", "button").addClass("btn").text("Save")
+      $("#btnArea").empty();
+
+      $("#btnArea").append($button);
+
+      $("#note-list").empty();
+
+      $("#note-list").append($noteListItems);
+
+
+
     })
+
+    window.location.reload();
   });
 
     
@@ -103,8 +118,8 @@ $(document).on("click", "#saveBtn", function(){
   $.ajax({method: "POST", url: "/api/notes", data: newNote})
   .then(function(data){
 
-    let note = data;
-
+    
+    
       notesArr.push(note);
 
       console.log(note);
@@ -116,12 +131,16 @@ $(document).on("click", "#saveBtn", function(){
 
       $noteListItems.push($li);
     
-      $noteList.append($noteListItems);
+      $("#note-list").append($li);
 
-    $("#titleInput").val("");
-    $("#mainInput").val("");
+    
     
   });
+
+  $("#titleInput").val("");
+    $("#mainInput").val("");
+  
+    window.location.reload();
 })
 
 

@@ -1,0 +1,75 @@
+body {
+background-color: #E5F8DE;
+color: #493548;
+font-family: 'Roboto Slab', serif;
+}
+.notesItem:hover, .notesItem:focus {
+  border: 3px solid #4B4E6D;
+}
+
+.notesItem > p:first-of-type {
+  font-family: 'Sofia', cursive;
+}
+.jumbotron {
+  background-color: #493548;
+  color: #D6DFE1;
+}
+#navBar {
+  background-color: #454764;
+  color: #BDBEC9;
+  box-shadow: 0 0 10px #493548;
+}
+
+#homeLink {
+  color: #BDBEC9;
+  box-shadow: none;
+}
+
+#homeLink:hover {
+  text-decoration: underline;
+}
+
+#newNoteBtn {
+  background-color: #D6DFE1;
+  color: #4B4E6D;
+  box-shadow: 0 0 5px #493548;
+}
+
+#newNoteBtn:hover {
+  background-color: #8B7E8A;
+  color: #E5F8DE; 
+}
+#saveBtn {
+  background-color: #4B4E6D;
+  color: #E5F8DE;
+  box-shadow: 0 0 5px #493548;
+}
+#saveBtn:hover {
+  background-color: #8B7E8A;
+  color: #E5F8DE;
+}
+
+#note-list{
+  overflow: hidden;
+  padding-right: 2%;
+  
+}
+
+li {
+  box-shadow: 0 0 2px #493548;
+}
+aside {
+  padding-top: 3%;
+}
+a {
+  color: #CDC7CD;
+}
+
+a:hover {
+  color: #CDC7CD;
+  text-decoration: underline;
+}
+
+label {
+  font-family: 'Sofia', cursive;
+}
